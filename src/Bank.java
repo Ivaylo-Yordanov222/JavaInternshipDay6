@@ -60,7 +60,7 @@ public class Bank {
     }
     public void withdraw(String username, String password, double amount){
         Account account = this.findAccount(username);
-        if(account != null && account.hasAccess(password) && account.getBalance() > amount){
+        if(account != null && account.hasAccess(password) && account.getBalance() >= amount){
             account.withdraw(amount);
             System.out.println(SUCCESS);
         }
